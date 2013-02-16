@@ -1,5 +1,6 @@
 PREFIX=/usr
 BINDIR=$(PREFIX)/bin
+SBINDIR=$(PREFIX)/sbin
 
 CC=gcc
 INSTALL=ginstall
@@ -15,7 +16,7 @@ clean:
 	rm $(PROGNAME) || true
 
 install: all
-	$(INSTALL) -D $(PROGNAME) $(DESTDIR)$(BINDIR)/$(PROGNAME)
+	$(INSTALL) -D $(PROGNAME) $(DESTDIR)$(SBINDIR)/$(PROGNAME)
 
 $(PROGNAME):
 	$(CC) $(PROGNAME).c -o $(PROGNAME) $(LIBS)
